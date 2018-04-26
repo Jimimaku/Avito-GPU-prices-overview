@@ -51,6 +51,7 @@ def Avito_Cleaning():
     namelist = namelist[YesterdayIndices]
     pricelist = np.array(pricelist)
     pricelist = pricelist[YesterdayIndices]
+    pricelist = [i.strip() for i in pricelist]
     timelist = np.array(timelist)
     timelist = timelist[YesterdayIndices]
     reflist = np.array(reflist)
@@ -58,7 +59,7 @@ def Avito_Cleaning():
 
     output = zip(namelist,pricelist,timelist,reflist)
 
-    with open(path + ".csv", "w") as f:
+    with open(path + ".csv", "w", encoding='utf-8') as f:
         writer = csv.writer(f)
         for row in output:
             writer.writerow(row)
