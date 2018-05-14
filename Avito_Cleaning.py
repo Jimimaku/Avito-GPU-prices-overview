@@ -8,7 +8,7 @@ s = sched.scheduler(time.time, time.sleep)
 
 def Avito_Cleaning():
 
-    DBfYesterday = datetime.now() - timedelta(days=2)
+    DBfYesterday = datetime.now() - timedelta(days=1)
     DBfYesterday = DBfYesterday.strftime('%m_%d_%Y')
     YesterdayDate = datetime.now() - timedelta(days=1)
     YesterdayDate = YesterdayDate.strftime('%m_%d_%Y')
